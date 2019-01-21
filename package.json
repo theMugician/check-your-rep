@@ -1,0 +1,28 @@
+{
+  "name": "check-your-rep",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "jshint-stylish": "latest"
+  },
+  "description": "Widget to check your online reputation from various apps",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theMugician/check-your-rep.git"
+  },
+  "keywords": [
+    "check-your-rep"
+  ],
+  "author": "Greg Slonina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theMugician/check-your-rep/issues"
+  },
+  "homepage": "https://github.com/theMugician/check-your-rep#readme"
+}
