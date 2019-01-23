@@ -1,9 +1,26 @@
-let score = 0
-let scoreEl = document.getElementsByClassName('score')
+const DOM = () => {
+  const dom = {}
 
-function addToScore() {
-  score += 10
-  scoreEl[0].innerHTML = score
+  dom.score = document.getElementsByClassName('score')[0]
+
+  return dom
+}
+
+const State = () => {
+  const state = {}
+
+  state.score = 0
+  state.isLoggedIn.facebook = 0
+  state.isLoggedIn.linkedin = 0
+
+  return state
+}
+
+const Handler = () => {
+  const handler = {}
+
+  handler.addToScore = function() { DOM.score.innerHTML = State.score }
+  return handler
 }
 
 function checkLoginState() {
@@ -15,76 +32,8 @@ function checkLoginState() {
 function statusChangeCallback(response) {
   if(response.status === 'connected') {
     console.log( 'Logged in and authenticated' )
-    addToScore()
+    Handler.addToScore()
   } else {
     console.log('Not authenticated')
   }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-/*
-function renderNewScore() {
-  scoreEl.innerHTML = score
-}
-*/
-})
-
-/**
- * @param {String} eventName.
- * @param {Function} functionName.
- * @param {String, Integer} data.
- * @returns {Object} An instance of the Event Emmitter object.
- */
-const EventEmitter = () => {
-  const obj = {}
-
-  obj.events = {}
-
-  obj.on = (eventName, fn) => {
-    obj.events[eventName] = obj.events[eventName] || []
-    obj.events[eventName].push(fn)
-  }
-
-  obj.off = (eventName, fn) => {
-    if (obj.events[eventName]) {
-      for (var i = 0; i < obj.events[eventName].length; i++) {
-        if (obj.events[eventName][i] === fn) {
-          obj.events[eventName].splice(i, 1)
-          break
-        }
-      }
-    }
-  }
-
-  obj.emit = (eventName, data) => {
-    if (obj.events[eventName]) {
-      obj.events[eventName].forEach((fn) => { fn(data) })
-    }
-  }
-
-  return obj
-}
-
-/**
- * @param {function} takes a list of observers.
- * @returns {} NULL.
- */
-const Observable = () => {
-  const obs = {}
-
-  obs.observers = []
-
-  obs.subscribe = (fn) => {
-    obs.observers.push(fn)
-  }
-
-  obs.unsubscribe = (fn) => {
-    obs.observers = obs.observers.filter(subcriber => subscriber !== fn)
-  }
-
-  obs.notify = (data) => {
-    obs.observers.forEach(observer => observer(data))
-  }
-
-  return obs
 }
