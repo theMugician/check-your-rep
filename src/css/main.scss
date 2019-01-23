@@ -144,15 +144,19 @@ body {
 }
 
 .button {
-    height: 32px;
-    font-size: 12px;
-    font-weight: bold;
-    font-family: arial;
-    border-radius: 2px;
-    padding: 0 24px;
-    border: 1px solid #eaeaea;
-    max-width: 200px;
-    margin-top: 20px;
+  height: 32px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: arial;
+  border-radius: 2px;
+  padding: 0 24px;
+  border: 1px solid #eaeaea;
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+.IN-widget {
+  margin-top: 20px;
 }
 
 p > a {

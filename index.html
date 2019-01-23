@@ -7,9 +7,11 @@
   <title>Check your reputation widget</title>
   <meta name='description' content='Check your reputation widget'>
   <meta name='author' content='Greg Slonina'>
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
 	<link rel='stylesheet' type='text/css' href='dist/main.css'>
 	<link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </head>
 
@@ -36,6 +38,10 @@
 
 	</script>
 
+	<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 7721znq5saewz1
+	</script>
+
 	<div class='container container--wrapper'>
 		
 		<div class='container container--user'>
@@ -53,7 +59,9 @@
 			  scope="public_profile,email"
 			  onlogin="checkLoginState();">
 			</fb:login-button>
-			<button class='button button--linkedin'>Linkedin</button>
+
+			<script type="in/Login"></script>
+
 			<button class='button button--twitter'>Twitter</button>
 			<button class='button button--github'>Github</button>
 			<button class='button button--instagram'>Instagram</button>

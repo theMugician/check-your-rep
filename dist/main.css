@@ -126,6 +126,9 @@ body {
   max-width: 200px;
   margin-top: 20px; }
 
+.IN-widget {
+  margin-top: 20px; }
+
 p > a {
   text-decoration: none;
   color: #4267B2;
