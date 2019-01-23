@@ -23,10 +23,7 @@
 	      xfbml      : true,
 	      version    : 'v3.2'
 	    });
-	    
-	    FB.getLoginStatus(function(response) {
-	    	statusChangeCallback(response);
-			});    
+	     
 	  };
 
 	  (function(d, s, id){
@@ -37,20 +34,6 @@
 	     fjs.parentNode.insertBefore(js, fjs);
 	   }(document, 'script', 'facebook-jssdk'));
 
-	  function statusChangeCallback(response) {
-	  	if(response.status === 'connected') {
-	  		console.log( 'Logged in and authenticated')
-	  	} else {
-	  		console.log('Not authenticated')
-	  	}
-	  }
-
-		function checkLoginState() {
-		  FB.getLoginStatus(function(response) {
-		    statusChangeCallback(response);
-		  });
-		}
-
 	</script>
 
 	<div class='container container--wrapper'>
@@ -60,7 +43,7 @@
 				User name
 			</div>	
 			<div class='user__score'>
-				0 repuation points
+				<span class='score'>0</span> Reputation points
 			</div>			
 		</div>
 
@@ -87,6 +70,17 @@
 
 	</div>
 
+	<script>
+		/*
+		function statusChangeCallbackLater(response) {
+		  if(response.status === 'connected') {
+		    console.log( 'Logged in and authenticated')
+		  } else {
+		    console.log('Not authenticated')
+		  }
+		}
+		*/
+</script>
   <script src='dist/main.js'></script>
 </body>
 </html>

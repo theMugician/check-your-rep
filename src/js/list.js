@@ -4,6 +4,3 @@ const List = () => {
   ]
   return list;
 }
-/*
-module.exports = 'List';
-*/

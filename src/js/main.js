@@ -1,91 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
+let score = 0
+let scoreEl = document.getElementsByClassName('score')
 
-/**
- * @param {} NULL.
- * @returns {Object} An instance of App object.
- */
-const App = () => {
-  window.onerror = function(message, file, line, col, error){ console.log(arguments); }
-  let app
-  let listings
-  let shuffledListings
-
-  const construct = () => {
-    app = {}
-  }
-
-  construct()
-
-  const DOM = () => {
-    let dom = {}
-
-    return dom
-  }
-
-  const State = () => {
-    let state = {}
-
-    return state
-  }
-
-  const Render = () => {
-    let render = {}
-
-    render.init = (template, parent, currentListings) => {
-    }
-
-    return render
-  }
-
-  const Update = () => {
-    const update = {}
-
-    return update
-  }
-
-  const Template = () => {
-    let template = {}
-
-    template.message = (message, type, outcome, className, image, display = '') => {
-      return `
-        <div class='message slide__message${display}' style='background-image: url(img/${image});'>
-          <h1 class=${className}>${outcome}</h1>
-          <h2>${type}</h2>
-          <p>${message}</p>
-          <button class='button button--next'>NEXT</button>
-        </div>
-      `
-    }
-
-    template.list = (i, image, type, desc) => {
-      return `
-        <li data-type='${type}' data-desc='${desc}' data-img='${image}' class='listings__pane-${i} ${position}'>
-          <div class='item'>
-            <div style='background-image: url(img/${image})' class='img'></div>
-            <div class='like'></div>
-            <div class='dislike'></div>
-          </div>
-        </li>
-      `
-    }
-
-    return template
-  }
-
-  const Init = () => {
-    Render.init()
-    //Add eventListeners to list items
-    //Add eventListeners for Action Buttons
-  }
-
-  const Controller = () => {
-
-  }
-
+function addToScore() {
+  score += 10
+  scoreEl[0].innerHTML = score
 }
 
-App();
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
 
+function statusChangeCallback(response) {
+  if(response.status === 'connected') {
+    console.log( 'Logged in and authenticated' )
+    addToScore()
+  } else {
+    console.log('Not authenticated')
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+/*
+function renderNewScore() {
+  scoreEl.innerHTML = score
+}
+*/
 })
 
 /**
@@ -147,5 +88,3 @@ const Observable = () => {
 
   return obs
 }
-
-/**********/
