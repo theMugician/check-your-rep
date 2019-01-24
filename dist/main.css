@@ -107,7 +107,8 @@ body {
   justify-content: center; }
 
 .user__score {
-  font-size: 24px; }
+  font-size: 36px;
+  font-weight: bold; }
 
 .container--buttons {
   display: flex;
@@ -124,6 +125,7 @@ body {
   padding: 0 24px;
   border: 1px solid #eaeaea;
   max-width: 200px;
+  min-width: 160px;
   margin-top: 20px; }
 
 .IN-widget {
