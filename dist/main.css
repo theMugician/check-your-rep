@@ -127,6 +127,8 @@ body {
   max-width: 200px;
   min-width: 160px;
   margin-top: 20px; }
+  .button:disabled {
+    color: #eaeaea; }
 
 .IN-widget {
   margin-top: 20px; }

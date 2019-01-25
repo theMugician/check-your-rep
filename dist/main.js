@@ -8,9 +8,15 @@ const DOM = () => {
   const dom = {}
 
   dom.score = document.getElementsByClassName('score')[0]
+  dom.facebookButton = document.getElementsByClassName('button--facebook')[0]
+  dom.linkedinButton = document.getElementsByClassName('button--linkedin')[0]
 
   return dom
 }
+
+DOM().linkedinButton.addEventListener('click', onLinkedInLogin)
+DOM().facebookButton.addEventListener('click', onFacebookLogin)
+
 
 const State = {
   score: 0
@@ -51,6 +57,18 @@ const Handler = () => {
   return handler
 }
 
+function onFacebookLogin() {
+  FB.login(function(response) {
+    if(response.status === 'connected') {
+      console.log( 'Logged in and authenticated' )
+      Handler().updateScore(State.score, 10)
+      DOM().facebookButton.disabled = true
+    } else {
+      console.log('Not authenticated')
+    }
+  })
+}
+
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
@@ -67,6 +85,13 @@ function statusChangeCallback(response) {
 }
 
 // Setup an event listener to make an API call once auth is complete
+function onLinkedInLogin() {
+  IN.User.authorize(function(){
+    onLinkedInLoad()
+  })
+}
+
+// Setup an event listener to make an API call once auth is complete
 function onLinkedInLoad() {
   IN.Event.on(IN, "auth", getProfileData)
 }
@@ -74,6 +99,7 @@ function onLinkedInLoad() {
 // Handle the successful return from the API call
 function onSuccess(data) {
   Handler().updateScore(State.score, 10)
+  DOM().linkedinButton.disabled = true
   console.log(data)
 }
 

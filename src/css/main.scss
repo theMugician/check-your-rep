@@ -155,6 +155,9 @@ body {
   max-width: 200px;
   min-width: 160px;
   margin-top: 20px;
+  &:disabled {
+    color: #eaeaea;
+  }
 }
 
 .IN-widget {
