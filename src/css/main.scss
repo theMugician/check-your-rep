@@ -4,12 +4,8 @@ VARIABLES & MIXINS
 =========================
 */
 
-$color-base: #fff;
-$color-blue: #34495E;
-$color-pass: #F54B5E;
-$color-like: #48D2A0;
-$color-para: #9B9B9B;
-$color-fb: #3b5998;
+$color--base: #222;
+$color--fb: #3b5998;
 
 @mixin mobile {
   @media (max-width: 480px) {
@@ -120,6 +116,8 @@ body {
   margin: 0;
   position: relative;
   overflow: hidden;
+  background: url('../img/background.jpeg');
+  background-size: cover;
 }
 
 .container--user {
@@ -146,17 +144,19 @@ body {
 
 .button {
   height: 32px;
+  color: $color--base;
   font-size: 12px;
   font-weight: bold;
   font-family: arial;
   border-radius: 2px;
   padding: 0 24px;
-  border: 1px solid #eaeaea;
+  border: 1px solid $color--base;
   max-width: 200px;
   min-width: 160px;
   margin-top: 20px;
   &:disabled {
     color: #eaeaea;
+    border: 1px solid #eaeaea;
   }
 }
 

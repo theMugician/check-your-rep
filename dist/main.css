@@ -97,7 +97,9 @@ body {
   padding: 0;
   margin: 0;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background: url("../img/background.jpeg");
+  background-size: cover; }
 
 .container--user {
   height: 100px;
@@ -118,17 +120,19 @@ body {
 
 .button {
   height: 32px;
+  color: #222;
   font-size: 12px;
   font-weight: bold;
   font-family: arial;
   border-radius: 2px;
   padding: 0 24px;
-  border: 1px solid #eaeaea;
+  border: 1px solid #222;
   max-width: 200px;
   min-width: 160px;
   margin-top: 20px; }
   .button:disabled {
-    color: #eaeaea; }
+    color: #eaeaea;
+    border: 1px solid #eaeaea; }
 
 .IN-widget {
   margin-top: 20px; }
