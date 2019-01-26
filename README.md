@@ -3,4 +3,4 @@
 ## Instructions
 1. Open your terminal
 2. Run npm install
-3. And you ready to go
+3. And you're ready to go!
