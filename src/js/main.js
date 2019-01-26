@@ -54,7 +54,7 @@ const Handler = () => {
 function onFacebookLogin() {
   FB.login(function(response) {
     if(response.status === 'connected') {
-      console.log( 'Logged in and authenticated' )
+      console.log( 'response' )
       Handler().updateScore(State.score, 10)
       DOM().facebookButton.disabled = true
     } else {
