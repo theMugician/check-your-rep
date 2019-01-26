@@ -1,5 +1,6 @@
 # check-your-rep
 
 ## Instructions
-Open your terminal
-Run npm install
+1. Open your terminal
+2. Run npm install
+3. And you ready to go
